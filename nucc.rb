@@ -8,7 +8,7 @@ class Nucc < Formula
   def install
     # move 'quickstart.sh' to #{prefix}/bin/nucc-install
     # bin.install "quickstart.sh" => "nucc-install"
-    system "./quickstart.sh", "--native"
+    system "./quickstart.sh", "--native", "--silent"
   end
 
   test do
