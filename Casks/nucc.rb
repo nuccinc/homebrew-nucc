@@ -6,7 +6,7 @@ cask 'nucc' do
   name 'nucc'
   homepage "https://github.com/phx/nucc"
 
-  depends_on boinc: ">= 7.0.0"
+  depends_on cask: 'boinc'
 
   installer script: {
                       executable: './quickstart.sh',
