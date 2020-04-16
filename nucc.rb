@@ -7,14 +7,8 @@ class Nucc < Formula
 
   def install
     # move 'quickstart.sh' to #{prefix}/bin/nucc-install
-    bin.install "quickstart.sh" => "nucc-install"
-  end
-
-  postflight do
-    system_command 'nucc-install',
-                   args: ['--native'],
-                   sudo: false
-    bin.uninstall "nucc-install"
+    # bin.install "quickstart.sh" => "nucc-install"
+    system "./quickstart.sh", "--native"
   end
 
   test do
