@@ -3,12 +3,21 @@ class Nucc < Formula
   homepage "https://github.com/phx/nucc"
   url "https://github.com/phx/homebrew-nucc/archive/0.0.5.tar.gz"
   sha256 "95056f7549cf1689902ee4ce859319c33957ad8744acf48671aeebb68625216a"
-  #depends_on "caskroom/cask/boinc" => "7.16.6"
+  
+  depends_on "caskroom/cask/boinc" => "7.16.6"
 
   def install
     # move 'quickstart.sh' to #{prefix}/bin/nucc-install
     # bin.install "quickstart.sh" => "nucc-install"
-    system "./quickstart.sh", "--native", "--silent"
+    # system "./quickstart.sh", "--native", "--silent"
+    ENV["project_url"] = "http://boinc.bakerlab.org/rosetta/"
+    ENV["weak_key"] = "2108683_fdd846588bee255b50901b8b678d52ec"
+    ENV["config_dir"] = "/Library/Application Support/BOINC Data"
+    mv gui_rpc_auth.cfg config_dir/
+    mv cc_config.xml config_dir/
+    mv remote_hosts.cfg config_dir/
+    system "(/Applications/BOINCmanager.app/Contents/Resources/boinc -redirectio -dir config_dir/ --daemon --allow_remote_gui_rpc --attach_project project_url weak_key &) >/dev/null 2>&1"
+    system "open", "/Applications/BOINCManager.app"
   end
 
   test do
