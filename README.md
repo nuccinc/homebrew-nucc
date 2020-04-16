@@ -6,7 +6,7 @@
 
 # NUCC Distributed Computing to Aid in COVID-19 Research
 
-**Latest Update: April 12, 2020**
+**Latest Update: April 16, 2020**
 
 Join [The National Upcycled Computing Collective (NUCC)](https://www.nuccinc.org/) in a collaborative effort to combine our resources in order to aid in COVID-19 research.
 This project draws heavily from [BOINC's default Docker configurations](https://github.com/BOINC/boinc-client-docker).
@@ -68,6 +68,12 @@ Example: `boinccmd --passwd <yourpassword> --project_attach http://boinc.bakerla
 git clone https://github.com/phx/nucc
 cd nucc
 ./quickstart.sh --native
+```
+
+### MacOS via Homebrew:
+```
+brew tap phx/nucc
+brew cask install nucc
 ```
 
 ---
@@ -575,6 +581,7 @@ For other distributions, refer to the [Manual Installation](#manual-installation
 
 ## Updates
 
+- Added Homebrew installation option for MacOS.
 - Should have improved RPC auth for MacOS users.
 - Updated instructions for automated native Windows install for less tech-savvy people:
   - Right-Click > Run as Administrator will execute native installation as opposed to Docker installation, same as if run without arguments.

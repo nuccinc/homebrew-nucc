@@ -12,7 +12,7 @@ CC_CONFIG='<cc_config>
 
 echo "$BOINC_GUI_RPC_PASSWORD" > "${CONFIG_DIR}/gui_rpc_auth.cfg"
 echo "The BOINC_GUI_RPC_PASSWORD has been set to '123'."
-echo "This can be changed at any time by changing the value in gui_rpc_auth.cfg"
+echo "This can be changed at any time by changing the value in ${CONFIG_DIR}/gui_rpc_auth.cfg"
 echo "$CC_CONFIG" > "${CONFIG_DIR}/cc_config.xml"
 echo '127.0.0.1' > "${CONFIG_DIR}/remote_hosts.cfg"
 
