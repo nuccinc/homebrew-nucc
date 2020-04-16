@@ -310,6 +310,12 @@ if [[ -n $(echo "${@}" | grep -E '(\-h)|(help)') ]]; then
   show_help && exit
 fi
 
+# If silent installation, set static BOINC_GUI_RPC_PASSWORD:
+if [[ $2 = '--silent' ]]; then
+  BOINC_GUI_RPC_PASSWORD='123'
+  echo "The BOINC_GUI_RPC_PASSWORD has been set to '123'."
+  echo -e 'This can be changed at any time by changing the value in gui_rpc_auth.cfg\n'
+fi
 # If password not set by env, prompt to set it:
 if [[ -z $BOINC_GUI_RPC_PASSWORD ]]; then
   echo
