@@ -1,14 +1,18 @@
 cask 'nucc' do
-  version '0.0.4'
-  sha256 "38502b0b9de52c7af02bd796314aa1b4427a640b976153d2f4f6e0d1976dc9e9"
+  version '0.0.5'
+  sha256 :nocheck
 
-  url "https://github.com/phx/homebrew-nucc/archive/0.0.4.tar.gz"
+  url "https://github.com/phx/homebrew-nucc/archive/0.0.5.tar.gz"
   name 'nucc'
   homepage "https://github.com/phx/nucc"
 
-  depends_on "boinc"
+  auto_updates: true
+  depends_on boinc: ">= 7.0.0"
 
-  postflight do
-    system_command './quickstart.sh'
-  end
+  installer script: {
+                      executable: './quickstart.sh',
+                      args:       ['none'],
+                      sudo:       false,
+                    }
+
 end
