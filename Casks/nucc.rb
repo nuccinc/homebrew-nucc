@@ -1,12 +1,11 @@
 cask 'nucc' do
-  version '0.0.5'
-  sha256 :nocheck
+  version '0.0.6'
+  sha256 "343bc819a75f0e44f0317614c38a2aab3c20112ccd171971a505378d3ddd4f64"
 
-  url "https://github.com/phx/homebrew-nucc/archive/0.0.5.tar.gz"
+  url "https://github.com/phx/homebrew-nucc/archive/0.0.6.tar.gz"
   name 'nucc'
   homepage "https://github.com/phx/nucc"
 
-  auto_updates: true
   depends_on boinc: ">= 7.0.0"
 
   installer script: {
