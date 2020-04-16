@@ -8,8 +8,8 @@ class Nucc < Formula
   def install
     # move 'brutalist.py' under #{prefix}/bin/
     # bin.install "brutalist.py" => "brutalist"
-    system_command './quickstart.sh',
-                   args: ['--native'],
+    system_command '/bin/bash',
+                   args: ['quickstart.sh', '--native'],
                    sudo: false
   end
 
