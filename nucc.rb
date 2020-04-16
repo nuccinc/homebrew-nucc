@@ -1,9 +1,8 @@
 class Nucc < Formula
   desc "COVID-19 research via distributed computing in collaboration with The National Upcycled Computing Collective."
   homepage "https://github.com/phx/nucc"
-  url "https://github.com/phx/homebrew-nucc/archive/0.0.3.tar.gz"
-  sha256 "bd8d2ca43ef05fd9dbc5f3f42ac123c778e6e38294a8c50850ca9e321f7c3926"
-
+  url "https://github.com/phx/homebrew-nucc/archive/0.0.1.tar.gz"
+  sha256 "eacf42725922572f47940633feb262ceb7e8cb8951b2d4f5c9e40deed880d3d5"
   #depends_on "caskroom/cask/boinc" => "7.16.6"
 
   def install
