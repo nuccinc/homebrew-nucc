@@ -4,7 +4,8 @@ class Nucc < Formula
   url "https://github.com/phx/homebrew-nucc/archive/0.0.10.tar.gz"
   sha256 "84b9ab842ffc1e99881296e140287e4c87d77e414aa6bada9d181c8a2b56b5b0"
 
-  depends_on "caskroom/cask/boinc" => "7.16.6"
+  depends_on "homebrew/cask"
+  depends_on "homebrew/cask-boinc" => "7.16.6"
 
   def install
     # move 'quickstart.sh' to #{prefix}/bin/nucc-install
