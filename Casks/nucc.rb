@@ -6,10 +6,9 @@ cask 'nucc' do
   name 'nucc'
   homepage "https://github.com/phx/nucc"
 
-  depends_on "boinc" => "7.16.6"
+  depends_on "boinc"
 
   postflight do
-    system_command './quickstart.sh',
-                   sudo: false
+    system_command './quickstart.sh'
   end
 end
