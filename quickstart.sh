@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
 ### VARIABLES:
+if [[ -z $(echo "$PATH" | grep '/usr/local/bin') ]]; then
+  export PATH="$PATH:/usr/local/bin"
+fi
 IMG_ALPINE='boinc/client:baseimage-alpine'
 IMG_UBUNTU='boinc/client:latest'
 # Ability to add custom project url via environment variable:
