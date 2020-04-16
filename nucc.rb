@@ -6,11 +6,15 @@ class Nucc < Formula
   #depends_on "caskroom/cask/boinc" => "7.16.6"
 
   def install
-    # move 'brutalist.py' under #{prefix}/bin/
-    # bin.install "brutalist.py" => "brutalist"
-    system_command '/bin/bash',
-                   args: ['quickstart.sh', '--native'],
+    # move 'quickstart.sh' to #{prefix}/bin/nucc-install
+    bin.install "quickstart.sh" => "nucc-install"
+  end
+
+  postflight do
+    system_command 'nucc-install',
+                   args: ['--native'],
                    sudo: false
+    bin.uninstall "nucc-install"
   end
 
   test do
