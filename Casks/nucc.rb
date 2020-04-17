@@ -9,7 +9,7 @@ cask 'nucc' do
   depends_on cask: 'boinc'
 
   installer script: {
-                      executable: './nucc.sh',
+                      executable: "#{staged_path}/nucc.sh",
                       args:       ['--install'],
                       sudo:       false,
                     }
