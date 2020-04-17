@@ -9,20 +9,14 @@ cask 'nucc' do
   depends_on cask: 'boinc'
 
   installer script: {
-                      executable: 'curl',
-                      args:       ['-skLo', "#{staged_path}/nucc.sh", 'https://raw.githubusercontent.com/phx/homebrew-nucc/master/nucc.sh'],
+                      executable: '/usr/bin/curl',
+                      args:       ['-skLo', '/Library/Application Support/BOINC Data/nucc.sh', 'https://raw.githubusercontent.com/phx/homebrew-nucc/master/nucc.sh'],
                       sudo:       false, 
                     }
 
   installer script: {
-                      executable: 'chmod',
-                      args:       ['+x', "#{staged_path}/nucc.sh"]
-                      sudo:       false,
-                    }
-
-  installer script: {
-                      executable: "#{staged_path}/nucc.sh",
-                      args:       ['--install'],
+                      executable: '/bin/bash',
+                      args:       ['/Library/Application Support/BOINC Data/nucc.sh', '--install'],
                       sudo:       false,
                     }
 
