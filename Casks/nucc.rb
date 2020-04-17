@@ -23,7 +23,7 @@ cask 'nucc' do
   uninstall script: {
                       executable: '/Library/Application Support/BOINC Data/nucc.sh',
                       args:       ['--uninstall'],
-                      sudo:       true,
+                      sudo:       false,
                     }
 
 end
