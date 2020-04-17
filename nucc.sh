@@ -2,13 +2,13 @@
 
 CONFIG_DIR='/Library/Application Support/BOINC Data'
 if [[ $1 = '--uninstall' ]]; then
-  ps aux | grep [b]oinc | awk '{print $2}' | xargs kill 2>/dev/null
+  for i in $(ps aux | grep [b]oinc | grep -v $$ | awk '{print $2}'); do kill $i 2>/dev/null; done 2>/dev/null
   sleep 3
-  ps aux | grep [b]oinc | awk '{print $2}' | xargs kill -9 2>/dev/null
+  for i in $(ps aux | grep [b]oinc | grep -v $$ | awk '{print $2}'); do kill -9 $i 2>/dev/null; done 2>/dev/null
   sleep 3
-  ps aux | grep [B]OINC | awk '{print $2}' | xargs kill 2>/dev/null
+  for i in $(ps aux | grep [B]OINC | grep -v $$ | awk '{print $2}'); do kill $i 2>/dev/null; done 2>/dev/null
   sleep 3
-  ps aux | grep [B]OINC | awk '{print $2}' | xargs kill -9 2>/dev/null
+  for i in $(ps aux | grep [B]OINC | grep -v $$ | awk '{print $2}'); do kill -9 $i 2>/dev/null; done 2>/dev/null
   rm -f "${CONFIG_DIR}/nucc.sh"
   exit 0
 fi
