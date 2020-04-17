@@ -5,6 +5,9 @@ if [[ $1 = '--uninstall' ]]; then
   pkill -9 -u boinc_project
   pkill -9 -u boinc_master
   rm -f "${CONFIG_DIR}/nucc.sh"
+  sleep 5
+  pkill -9 -u boinc_project
+  pkill -9 -u boinc_master
   exit 0
 fi
 if [[ $1 != '--install' ]]; then
