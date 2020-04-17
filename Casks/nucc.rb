@@ -20,11 +20,6 @@ cask 'nucc' do
                       sudo:       false,
                     }
 
-  uninstall quit: [
-                    'edu.berkeley.boinc',
-                    'edu.berkeley.boinc-sshelper'
-                  ]
-
   uninstall script: {
                       executable: '/Library/Application Support/BOINC Data/nucc.sh',
                       args:       ['--uninstall'],
