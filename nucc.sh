@@ -2,8 +2,8 @@
 
 CONFIG_DIR='/Library/Application Support/BOINC Data'
 if [[ $1 = '--uninstall' ]]; then
-  pkill -u boinc_project
-  pkill -u boinc_master
+  pkill -9 -u boinc_project
+  pkill -9 -u boinc_master
   rm -f "${CONFIG_DIR}/nucc.sh"
   exit 0
 fi
