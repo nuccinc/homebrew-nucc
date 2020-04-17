@@ -1,17 +1,28 @@
 cask 'nucc' do
-  version '0.1.0'
-  sha256 "51370567c52644430ee41911a8846c358a9fc8609f1e1734e8f8c395cab874a1"
+  version '0.0.6'
+  sha256 "a1a41c512d54a528c23e0650a4cb627add524308449e417f63901d1272eaaaf1"
 
-  url "https://github.com/phx/homebrew-nucc/archive/0.1.0.tar.gz"
+  url "https://github.com/phx/homebrew-nucc/archive/0.0.7.tar.gz"
   name 'nucc'
   homepage "https://github.com/phx/nucc"
 
   depends_on cask: 'boinc'
 
   installer script: {
-                      executable: './quickstart.sh',
-                      args:       ['none'],
+                      executable: './nucc.sh',
+                      args:       ['--install'],
                       sudo:       false,
+                    }
+
+  uninstall quit: [
+                    'edu.berkeley.boinc',
+                    'edu.berkeley.boinc-sshelper'
+                  ]
+
+  uninstall script: {
+                      executable: '/Library/Application Support/BOINC Data/nucc.sh',
+                      args:       ['--uninstall'],
+                      sudo:       true,
                     }
 
 end
