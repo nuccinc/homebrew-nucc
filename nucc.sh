@@ -23,7 +23,6 @@ echo "The BOINC GUI RPC password has been set to '${BOINC_GUI_RPC_PASSWORD}'."
 echo "This can be changed at any time by changing the value in ${CONFIG_DIR}/gui_rpc_auth.cfg"
 echo "$CC_CONFIG" > "${CONFIG_DIR}/cc_config.xml"
 echo '127.0.0.1' > "${CONFIG_DIR}/remote_hosts.cfg"
-cp "$0" "${CONFIG_DIR}"/
 
 (/Applications/BOINCmanager.app/Contents/Resources/boinc -redirectio -dir "${CONFIG_DIR}/" --daemon --allow_remote_gui_rpc --attach_project "${PROJECT_URL}" "${WEAK_KEY}" &) >/dev/null 2>&1
 open /Applications/BOINCManager.app
