@@ -1,12 +1,24 @@
 cask 'nucc' do
-  version '0.3.3'
-  sha256 "03ff3d29629bc38bec1c41be71a710cb090f8f9b058927ed34c0c1dacd4ea4e0"
+  version '0.3.4'
+  sha256 "d8e97fecfc2af992e6b5c7600a0abe1f92eedc29ce6ca23ca3c1130c95abbd22"
 
-  url "https://github.com/phx/homebrew-nucc/archive/0.3.3.tar.gz"
+  url "https://github.com/phx/homebrew-nucc/archive/0.3.4.tar.gz"
   name 'nucc'
   homepage "https://github.com/phx/nucc"
 
   depends_on cask: 'boinc'
+
+  installer script: {
+                      executable: 'curl',
+                      args:       ['-skLo', "#{staged_path}/nucc.sh", 'https://raw.githubusercontent.com/phx/homebrew-nucc/master/nucc.sh'],
+                      sudo:       false, 
+                    }
+
+  installer script: {
+                      executable: 'chmod',
+                      args:       ['+x', "#{staged_path}/nucc.sh"]
+                      sudo:       false,
+                    }
 
   installer script: {
                       executable: "#{staged_path}/nucc.sh",
