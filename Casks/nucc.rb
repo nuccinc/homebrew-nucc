@@ -1,8 +1,8 @@
 cask 'nucc' do
-  version '0.0.6'
-  sha256 "a1a41c512d54a528c23e0650a4cb627add524308449e417f63901d1272eaaaf1"
+  version '0.2.0'
+  sha256 "708f51721839eff4007d7c0d63fbdb8e9e89130955f7eb07a124a60239560b26"
 
-  url "https://github.com/phx/homebrew-nucc/archive/0.0.7.tar.gz"
+  url "https://github.com/phx/homebrew-nucc/archive/0.2.0.tar.gz"
   name 'nucc'
   homepage "https://github.com/phx/nucc"
 
