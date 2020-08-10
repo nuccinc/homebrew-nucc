@@ -4,6 +4,8 @@ MacOS Homebrew implementation for [https://github.com/nuccinc/distributed-comput
 
 View full documentation at the above link.
 
+All code written and resently migrated to official NUCC repository by [phoenix](https://github.com/phx).
+
 ## Install
 ```
 brew tap nuccinc/nucc
